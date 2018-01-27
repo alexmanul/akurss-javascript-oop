@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript OOP | Lesson 01</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    function Transport() {
+
+        var broken = false;
+
+        this.setBroken = function (isBroken) {
+            broken = isBroken;
+        };
+
+        this.getBroken = function () {
+            return broken;
+        }
+    }
+
+    function Car(maxSpeed) {
+
+        Transport.call(this);
+
+        var fuelAmount = 0;
+
+        var CAPACITY = 500;
+
+        this.setFuelAmount = function (amount) {
+            if (amount > CAPACITY) {
+                throw new Error("Thanks, I am not thirsty!");
+
+            }
+            fuelAmount = amount;
+        };
+
+        this.getFuelAmount = function () {
+            return fuelAmount;
+        };
+
+        console.log("New car created with max speed: " + maxSpeed);
+
+        function onRouteEnd() {
+            console.log("Your car has arrived")
+        }
+
+        function isEnoughFuel(distance) {
+            return fuelAmount > distance / 10;
+        }
+
+        function travelTime(distance) {
+            return distance * 1000 / maxSpeed;
+        }
+
+        travelTime = travelTime.bind(this);
+
+        this.startMove = function (distance) {
+            if (isEnoughFuel(distance)) {
+                setTimeout(onRouteEnd, travelTime.call(distance));
+            } else {
+                console.log("Not enough fuel");
+            }
+        }
+    }
+
+    var car1 = new Car(120);
+    car1.setFuelAmount(150);
+    car1.startMove(200);
+
+    var car2 = new Car(200);
+    car2.setFuelAmount(650);
+    car2.startMove(200);
+
+    var car3 = new Car(100);
+    car3.setBroken(true);
+
+    console.log("Is car broken?" + car2.getBroken());
+    console.log("Is car broken?" + car1.getBroken());
+    console.log("Is car broken?" + car3.getBroken());
+
+</script>
+
+</body>
+</html>

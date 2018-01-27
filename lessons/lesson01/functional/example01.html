@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript OOP | Lesson 01</title>
+</head>
+<body>
+<script>
+	function Car(maxSpeed) {
+		this.fuelAmount = 0;
+
+		console.log("New car created with max speed: " + maxSpeed);
+
+		function onRouteEnd() {
+			console.log("Your car has arrived")
+		}
+
+		this.startMove = function (distance) {
+			setTimeout(onRouteEnd, distance * 1000 / maxSpeed);
+		}
+	}
+
+	var car = new Car(120);
+	car.startMove(1000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript OOP | Lesson 01</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    function Car(maxSpeed) {
+        this.fuelAmount = 0;
+
+        console.log("New car created with max speed: " + maxSpeed);
+
+        function onRouteEnd() {
+            console.log("Your car has arrived")
+        }
+
+        function travelTime(distance) {
+            if (distance / 10 > this.fuelAmount) {
+                console.log("Not enough fuel");
+                return 0;
+            }
+            return distance * 1000 / maxSpeed;
+        }
+
+        this.startMove = function (distance) {
+            setTimeout(onRouteEnd, travelTime(distance));
+        }
+    }
+
+    var car = new Car(120);
+    car.fuelAmount = 50;
+    car.startMove(1000);
+
+</script>
+
+</body>
+</html>

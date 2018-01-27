@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript OOP | Lesson 02</title>
+</head>
+
+<body>
+<script>
+    "use strict";
+
+    function Car(maxSpeed, name) {
+        this._maxSpeed = maxSpeed;
+        this._fuelAmount = 0;
+        this._name = name;
+    }
+
+    Car.prototype.CAPACITY = 500;
+
+    Car.prototype.setFuelAmount = function (amount) {
+        if (amount > this.CAPACITY) {
+            throw new Error("Thanks, I am full");
+        }
+        this._fuelAmount = amount;
+    };
+
+    Car.prototype._isEnoughFuel = function (distance) {
+        return this._fuelAmount > distance / 10;
+    };
+
+    Car.prototype._travelTime = function (distance) {
+        return distance * 1000 / this._maxSpeed;
+    };
+
+    Car.prototype.startMove = function (distance) {
+        console.log("Starting " + this._name);
+        if (this._isEnoughFuel(distance)) {
+            var self = this;
+            setTimeout(function () {
+                console.log(self._name + " has arrived");
+            }, this._travelTime(distance));
+        } else {
+            console.log("Not enough fuel");
+        }
+    };
+
+    var zaporozhec = new Car(70, "Zaporozhec");
+    zaporozhec.setFuelAmount(150);
+    zaporozhec.startMove(500);
+
+    var mercedes = new Car(120, "Mercedes");
+    mercedes.setFuelAmount(10);
+    mercedes.startMove(500);
+
+    var volvo = new Car(120, "Volvo");
+    volvo.setFuelAmount(200);
+    volvo.startMove(500);
+
+</script>
+
+</body>
+
+</html>
