@@ -11,12 +11,19 @@
             title: title.trim(),
             done: false
         };
-
         this._storage.save(newTodo, callback);
     };
 
     Model.prototype.findAll = function (callback) {
         this._storage.findAll(callback);
+    };
+
+    Model.prototype.remove = function (id, callback) {
+        this._storage.remove(id, callback)
+    };
+
+    Model.prototype.update = function (id, data, callback) {
+        this._storage.update(id, data, callback)
     };
 
     window.app = window.app || {};

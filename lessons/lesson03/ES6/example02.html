@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    let a = {
+        message: "Hello, ",
+        users: ["John", "Anna", "Bob"],
+        printAll: function () {
+            var self = this;
+            this.users.forEach(function (user) {
+                alert(self.message + user);
+            });
+        }
+    };
+
+    a.printAll();
+
+    let b = {
+        message: "Hello, ",
+        users: ["John", "Anna", "Bob"],
+        printAll: function () {
+            this.users.forEach(
+                (user) => alert(this.message + user)
+            );
+        }
+    };
+
+    b.printAll();
+
+
+    // lambdas:
+    // 1. Нет своего this
+    // 2. Нет своего arguments
+    // 3. Нельзя использовать через new
+
+</script>
+</body>
+
+</html>

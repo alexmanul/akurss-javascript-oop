@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+
+    class Transport {
+
+        constructor(name) {
+            this.name = name;
+        }
+
+    }
+
+    class Car extends Transport {
+
+        constructor(name, maxSpeed) {
+            super(name);
+            this.maxSpeed = maxSpeed;
+        }
+
+        travelTime(distance) {
+            return distance * 1000 / this.maxSpeed;
+        }
+
+        startMove(distance) {
+            setTimeout(() => alert(`${this.name} arrived`),
+                this.travelTime(distance));
+        }
+    }
+
+    let mers = new Car("Mercedes", 200);
+    mers.startMove(1000);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises</title>
+</head>
+
+<body>
+<script>
+    function httpGet(url) {
+        return new Promise((resolve, reject) => {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+
+            xhr.onload = function () {
+                if (this.status === 200) {
+                    resolve(this.response);
+                } else {
+                    let error = new Error(this.statusText);
+                    error.code = this.status;
+                    reject(error);
+                }
+            };
+
+            xhr.onerror = function () {
+                reject(new Error("Cannot connect"));
+            };
+
+            xhr.send();
+        });
+    }
+
+    // httpGet("http://www.google.com/?q=test")
+    httpGet("https://raw.githubusercontent.com/TheAvalanche/hibernate_test/master/src/main/resources/hibernate.cfg.xml")
+        .then(
+            // success => alert(`Success: ${success}`),
+            success => document.body.innerHTML = success,
+            error => alert(`Error ${error}`)
+        );
+</script>
+</body>
+
+</html>
