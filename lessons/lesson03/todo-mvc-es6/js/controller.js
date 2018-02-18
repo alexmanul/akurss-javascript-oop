@@ -21,6 +21,14 @@ export default class Controller {
     }, () => this.showAll());
   }
 
+ removeItem(title){
+
+   this.store.delete({
+     title: title,
+     done: false
+   }, () => this.showAll());
+ }
+
   showAll() {
     this.store.findAll((data) => this.view.showAll(data));
   }

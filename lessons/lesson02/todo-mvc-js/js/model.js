@@ -18,6 +18,10 @@
         this._storage.findAll(callback);
     };
 
+    Model.prototype.showCount = function (callback) {
+        this._storage.showCount(callback);
+    };
+
     Model.prototype.remove = function (id, callback) {
         this._storage.remove(id, callback)
     };

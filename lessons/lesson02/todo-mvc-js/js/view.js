@@ -19,6 +19,8 @@
 
         this.$todoList = document.querySelector('.todo-list');
         this.$newTodo = document.querySelector('.new-todo');
+        //
+        // this.$todoCount = document.querySelector('.todo-count');
     }
 
     View.prototype.onNewTodo = function (callback) {
@@ -37,6 +39,12 @@
     View.prototype.showAll = function (data) {
         this.$todoList.innerHTML = this._template.fillTemplate(data);
     };
+
+    // View.prototype.showCount = function (data) {
+    //   var self = this;
+    //   var items = self.$todoList;
+    //   this.$todoCount.innerHTML = items.length;
+    // };
 
     View.prototype.onItemToggle = function (callback) {
         var self = this;

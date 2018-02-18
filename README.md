@@ -1,6 +1,7 @@
-# akurss-javascript-oop
+# javascript-oop
 
 AKurss: WEB II
 - Advanced JavaScript
 - JQuery
 - Version control systems - Git
+- Node.js, Gulp
