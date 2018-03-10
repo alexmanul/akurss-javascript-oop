@@ -109,7 +109,7 @@
       var obj = {name: "John", surname: "Doe"};
       $.each(obj, function(key, value) {
         console.log(key + " : " + value);
-      })
+      });
 
       if ($.inArray("apple", arr) !== -1) {
         console.log("Apple found");
@@ -137,7 +137,7 @@
           html: "Hello, " + obj.name + " " + obj.surname,
           "class": "lead"
         }).appendTo(".jumbotron")
-      })
+      });
 
       var fontSize = 16;
       $("#fontIncrease").click(function() {

@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>JQuery test</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="jumbotron">
+
+</div>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <h3>Hello, JQuery!</h3>
+            <!--<p>-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta dolores esse eum fugit, in natus nemo-->
+            <!--nulla obcaecati, optio quas ratione voluptatum? Dignissimos dolorum odit porro quasi rem ullam.-->
+            <!--</p>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque blanditiis, culpa cum, dolorem enim ex-->
+            <!--hic illum in iusto laborum mollitia nobis officiis placeat quos sit tempore vitae voluptatibus?-->
+            <!--</p>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consequatur dignissimos dolor-->
+            <!--dolorum eligendi eum ex expedita facilis inventore ipsum iusto minima numquam pariatur quos sunt,-->
+            <!--temporibus totam voluptate?-->
+            <!--</p>-->
+            <!--<div class="pic">-->
+            <!--<img src="http://placeimg.com/300/300/nature">-->
+            <!--</div>-->
+            <!--<div class="row py-3">-->
+            <!--<div class="col-4">-->
+            <!--<button type="button" id="colorSwitch">Click me!</button>-->
+            <!--</div>-->
+            <!--<div class="col-4">-->
+            <!--<button type="button" id="htmlSwitch">Click me!</button>-->
+            <!--</div>-->
+            <!--<div class="col-4">-->
+            <!--<button type="button" id="addNew">Click me!</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<p>-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta dolores esse eum fugit, in natus nemo-->
+            <!--nulla obcaecati, optio quas ratione voluptatum? Dignissimos dolorum odit porro quasi rem ullam.-->
+            <!--</p>-->
+            <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque blanditiis, culpa cum, dolorem enim ex-->
+            <!--hic illum in iusto laborum mollitia nobis officiis placeat quos sit tempore vitae voluptatibus?-->
+            <!--</p>-->
+            <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consequatur dignissimos dolor-->
+            <!--dolorum eligendi eum ex expedita facilis inventore ipsum iusto minima numquam pariatur quos sunt,-->
+            <!--temporibus totam voluptate?-->
+            <!--</p>-->
+            <!--<p>-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta dolores esse eum fugit, in natus nemo-->
+            <!--nulla obcaecati, optio quas ratione voluptatum? Dignissimos dolorum odit porro quasi rem ullam.-->
+            <!--</p>-->
+            <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque blanditiis, culpa cum, dolorem enim ex-->
+            <!--hic illum in iusto laborum mollitia nobis officiis placeat quos sit tempore vitae voluptatibus?-->
+            <!--</p>-->
+            <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consequatur dignissimos dolor-->
+            <!--dolorum eligendi eum ex expedita facilis inventore ipsum iusto minima numquam pariatur quos sunt,-->
+            <!--temporibus totam voluptate?-->
+            <!--</p>-->
+
+            <!--<p>-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta dolores esse eum fugit, in natus nemo-->
+            <!--nulla obcaecati, optio quas ratione voluptatum? Dignissimos dolorum odit porro quasi rem ullam.-->
+            <!--</p>-->
+            <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque blanditiis, culpa cum, dolorem enim ex-->
+            <!--hic illum in iusto laborum mollitia nobis officiis placeat quos sit tempore vitae voluptatibus?-->
+            <!--</p>-->
+            <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consequatur dignissimos dolor-->
+            <!--dolorum eligendi eum ex expedita facilis inventore ipsum iusto minima numquam pariatur quos sunt,-->
+            <!--temporibus totam voluptate?-->
+            <!--</p>-->
+            <button type="button" id="slide">Slide up</button>
+
+            <div id="a1" class="my-3">
+                <p>
+                    <a href="https://www.google.lv/">Search</a>
+                </p>
+                <p>
+                    <button type="button" id="btn1">Click me!</button>
+
+                </p>
+            </div>
+            <div class="a2 my-3">
+                <p>
+                    <a href="https://www.delfi.lv/">News</a>
+                </p>
+                <p>
+                    <button type="button" id="btn2">Click me!</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+    // window.onload = function () {
+    //     alert("Everything is ready");
+    // };
+    //
+    // jQuery(document).ready(function () {
+    //     alert("I am jQuery");
+    // });
+
+
+    $(document).ready(function () {
+
+        var fontSize =16;
+        $('#btn1').click(function () {
+           console.log(fontSize);
+           fontSize=+2;
+           $("#alink").css("fontSize", fontSize + "px");
+        });
+
+        $('#btn2').click(function () {
+            $(document).find('#a2').innerHTML("Text changed");
+        });
+
+
+        // $.get("https://raw.githubusercontent.com/TheAvalanche/akurss-web-1/master/test.json", function (r) {
+        //     console.log(r);
+        //     let obj = JSON.parse(r);
+        //     $("<div>", {
+        //         html: "Hello, " + obj.name + " " + obj.surname,
+        //         "class": "lead"
+        //     }).appendTo(".jumbotron")
+        // })
+        //
+        // alert("I am jQuery");
+
+        // $('p').click(function () {
+        //     console.log("Clicked")
+        // });
+
+        // $('p').click(function () {
+        //     $('#demo').hide();
+        // });
+
+        // $('#colorSwitch').click(function () {
+        //     $('h3').toggleClass('text-warning');
+        // });
+
+        // $('img').dblclick(function () {
+        //     console.log($('img').attr('src'));
+        //     $('img').attr('src', 'http://placeimg.com/500/500/animals');
+        // });
+
+        // $('#htmlSwitch').hover(function () {
+        //     $(document).find('p').eq(2).html("Text changed");
+        // });
+
+        // $('#addNew').click(function () {
+        //     // $("<p>This is s a new paragraph</p>").appendTo('.col-12')
+        //     let newElement = $("<p>New paragraph</p>");
+        //     $("p").last().after(newElement.clone());
+        // });
+
+
+        // const init = "          Hello, world   ";
+        // console.log($.trim(init));
+
+        // const arr = ['apple', 'orange', 'plum'];
+        // $.each(arr, function (idx, value) {
+        //     console.log(idx + " : " + value)
+        // });
+        //
+        // const obj = {name: "John", surname: "Doe"};
+        // $.each(obj, function (key, value) {
+        //     console.log(key + " : " + value);
+        // });
+        //
+        // if ($.inArray("apple", arr) !== -1) {
+        //     console.log("Apple found");
+        // }
+        //
+        // const defaultSettings = {
+        //     pageSize: 20, maxPage: 10
+        // };
+        // const settings = {pageSize: 40};
+        //
+        // const finalSettings = $.extend(defaultSettings, settings);
+        //
+        // console.log(finalSettings);
+
+        // $("#slide").click(function () {
+        //     $('html, body').animate({scrollTop: 0}, "slow");
+        // });
+        //
+        // $("p").hover(function () {
+        //     $(this).animate({opacity: 0.25}, "slow");
+        // });
+        //
+        // $.get("https://raw.githubusercontent.com/TheAvalanche/akurss-web-1/master/test.json", function (r) {
+        //     console.log(r);
+        //     let obj = JSON.parse(r);
+        //     $("<div>", {
+        //         html: "Hello, " + obj.name + " " + obj.surname,
+        //         "class": "lead"
+        //     }).appendTo(".jumbotron")
+        // })
+    })
+</script>
+</body>
+</html>
