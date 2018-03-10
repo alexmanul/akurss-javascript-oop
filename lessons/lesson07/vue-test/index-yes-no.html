@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+   </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div id="vue-app">
+            <p class="text-center display-4 my-5">Что ты хочешь знать, друг мой?</p>
+            <input class="form-control form-control-lg" type="text" v-model="question" placeholder="Ваш вопрос?">
+            <p class="text-center">{{ hint }}</p>
+            <div class="text-center position-relative my-5">
+              <img :src="answerImg" class="img-fluid">
+              <div class="position-absolute text-center text-white display-4 w-100 font-weight-bold" style="top: 40%; -webkit-text-stroke: 2px black;">
+                {{ answer }}
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/lodash/lodash.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    </script>
+    <script>
+
+      var application = new Vue({
+
+          el: "#vue-app",
+          data: {
+            question: "",
+            hint: "Сначала спроси",
+            answer: "",
+            answerImg: ""
+          },
+          watch: {
+            question: function (val) {
+              this.hint = "Печатай, печатай...";
+              this.answer = "";
+              this.answerImg = "";
+              this.findAnswer();
+            }
+          },
+          methods: {
+            findAnswer: _.debounce(
+              function() {
+                if (this.question.indexOf("?") === -1) {
+                  this.hint = "Это не вопрос.";
+                  return;
+                }
+
+                this.hint = "Я думаю...";
+                var self = this;
+                $.get("https://yesno.wtf/api", function(data) {
+                  self.hint = "";
+                  self.answer = data.answer === "yes" ? "Да!" : "Нет...";
+                  self.answerImg = data.image;
+                })
+              },
+              1000
+            )
+          }
+
+      });
+
+    </script>
+
+    </script>
+  </body>
+</html>

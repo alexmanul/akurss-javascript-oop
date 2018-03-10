@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="application">
+    <div v-if="user.age > 18">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa distinctio, earum expedita fuga fugiat, id ipsa
+        laudantium, minima molestiae necessitatibus quae quidem repellat reprehenderit saepe vitae? Assumenda libero
+        tempore veritatis.
+    </div>
+    <div v-else-if="user.age > 16 && user.age < 18">
+        Only with parents
+    </div>
+    <div v-else>
+        You are not allowed to see this text
+    </div>
+
+
+    <template v-if="user.age > 18">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+    </template>
+
+
+</div>
+</body>
+</html>

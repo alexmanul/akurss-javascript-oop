@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JQuery test</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+      #salary {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button type="button" id="salary">Increase my salary!</button>
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script>
+
+    $(document).ready(function() {
+      $("#salary").hover(function() {
+        var randomX = random(0, $(window).width());
+        var randomY = random(0, $(window).height());
+        $('#salary').css({
+          top: randomY,
+          left: randomX
+        });
+      });
+    });
+
+    function random(min, max) {
+      return Math.floor((Math.random() * max) + min);
+    }
+
+
+  </script>
+  </body>
+</html>

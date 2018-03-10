@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JQuery test</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+      h3 {
+        transition: color 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Hello, JQuery</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <img src="http://placeimg.com/500/100" class="my-3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <button type="button" id="colorSwitch">Click me!</button>
+        </div>
+        <div class="col-4">
+          <button type="button" id="htmlSwitch">Click me!</button>
+        </div>
+        <div class="col-4">
+          <button type="button" id="addNew">Click me!</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 my-3">
+          <h3>Hello, JQuery</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <img src="http://placeimg.com/500/100" class="my-3">
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-12">
+          <h3>Hello, JQuery</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button type="button" id="slide">Slide Up</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a href="#" id="alink">Google it!</a>
+        </div>
+        <div class="col-4">
+          <button type="button" id="fontIncrease">Click me!</button>
+        </div>
+        <div class="col-4">
+          <button type="button" id="changeUrl">Click me!</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script>
+
+    $(document).ready(function() {
+      alert("I am JQuery");
+
+      $('p').click(function() {
+        $(this).fadeToggle("slow");
+      });
+
+      $("#colorSwitch").click(function() {
+        $('h3').toggleClass('text-success');
+      });
+
+      $('img').dblclick(function() {
+        console.log($('img').attr('src'));
+        $('img').attr('src', 'http://placeimg.com/500/100/animals');
+      });
+
+      $('#htmlSwitch').hover(function() {
+        $(document).find('p').eq(2).html("Text changed!");
+      });
+
+      $('#addNew').click(function() {
+        //$("<p>This is a new paragraph</p>").appendTo('.col-12');
+        var newElement = $("<p>New paragraph</p>");
+        $("p").last().after(newElement.clone());
+      });
+
+      var init = "   Hello, world    ";
+      console.log($.trim(init));
+
+      var arr = ['apple', 'orange', 'plum'];
+      $.each(arr, function(idx, value) {
+        console.log(idx + " : " + value);
+      });
+
+      var obj = {name: "John", surname: "Doe"};
+      $.each(obj, function(key, value) {
+        console.log(key + " : " + value);
+      })
+
+      if ($.inArray("apple", arr) !== -1) {
+        console.log("Apple found");
+      }
+
+      var defaultSettings = {pageSize: 20, maxPage: 10};
+      var settings = {pageSize: 40};
+
+      var finalSettings = $.extend(defaultSettings, settings);
+
+      console.log(finalSettings);
+
+      $("#slide").click(function() {
+          $('html, body').animate({scrollTop: 0}, "slow");
+      });
+
+      $("h3").hover(function() {
+        $(this).animate({opacity: 0.25}, "slow");
+      });
+
+      $.get("https://raw.githubusercontent.com/TheAvalanche/akurss-web-1/master/test.json", function(r) {
+        console.log(r);
+        var obj = JSON.parse(r);
+        $("<div>", {
+          html: "Hello, " + obj.name + " " + obj.surname,
+          "class": "lead"
+        }).appendTo(".jumbotron")
+      })
+
+      var fontSize = 16;
+      $("#fontIncrease").click(function() {
+        console.log(fontSize);
+        fontSize += 2;
+        $("#alink").css("fontSize", fontSize + "px");
+      });
+
+      $("#changeUrl").click(function() {
+          $("#alink").attr("href", "https://google.com");
+      });
+
+    });
+
+
+  </script>
+  </body>
+</html>

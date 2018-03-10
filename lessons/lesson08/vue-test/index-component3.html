@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <user-logo name="John" surname="Doe"></user-logo>
+    <user-logo name="John" surname="Kramer"></user-logo>
+    <user-logo v-bind:name="user.name" :surname="user.surname"></user-logo>
+    <user-logo v-bind="user"></user-logo>
+</div>
+
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+    Vue.component("user-logo", {
+        template: '<div><img src="http://placeimg.com/100/100/animals"> {{name}} {{surname}}</div>',
+        props: ['name', 'surname']
+    });
+
+    var app = new Vue({
+        el: "#app",
+        data: {
+            user: {
+                name: "Jack",
+                surname: "Black"
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

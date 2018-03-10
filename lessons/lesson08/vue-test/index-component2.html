@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <user-logo user-name="John Snow"></user-logo>
+    <user-logo user-name="John Doe"></user-logo>
+    <user-logo v-bind:user-name="user1"></user-logo>
+    <user-logo :user-name="user2"></user-logo>
+</div>
+
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+    Vue.component("user-logo", {
+        template: '<div><img src="http://placeimg.com/100/100"> {{userName}}</div>',
+        props: ['userName']
+    });
+
+    var app = new Vue({
+        el: "#app",
+        data: {
+            user1: "John Travolta",
+            user2: "Pamela Anderson",
+        }
+    })
+</script>
+</body>
+</html>

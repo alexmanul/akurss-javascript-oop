@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: all 1s;
+        }
+
+        .fade-enter, .fade-leave-to {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="app">
+    <input v-model="newTodo" placeholder="Add todo" @keyup.enter="addNewTodo">
+    <ul>
+        <li is="todo-item" v-for="(todo, index) in todos" :key="todo.title" v-bind="todo" @remove="removeTodo"></li>
+    </ul>
+</div>
+
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script type="text/x-template" id="todo-item">
+    <transition name="fade">
+        <li>
+            <input type="checkbox">
+            {{title}}
+            <button @click="$emit('remove')">X</button>
+        </li>
+    </transition>
+</script>
+
+
+<script>
+
+    Vue.component('todo-item', {
+        template: "#todo-item",
+        props: ['complete', 'title']
+    });
+
+    new Vue({
+        el: "#app",
+        data: {
+            todos: [
+                {id: 1, complete: false, title: "Listen to Death"},
+                {id: 2, complete: false, title: "Listen to Slayer"},
+                {id: 3, complete: false, title: "Listen to Metallica"},
+            ],
+            nextId: 4
+        },
+        methods: {
+            addNewTodo: function () {
+
+                var todo = {
+                    id: this.nextId++,
+                    complete: false,
+                    title: this.newTodo
+                };
+
+                this.todos.push(todo);
+                this.newTodo = "";
+            },
+            removeTodo: function (index) {
+                this.todos.splice(index, 1)
+            }
+        }
+    });
+</script>
+</body>
+</html>

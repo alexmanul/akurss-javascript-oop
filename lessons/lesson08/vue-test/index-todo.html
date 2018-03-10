@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li is="todo-item"></li>
+        <li is="todo-item"></li>
+        <li is="todo-item"></li>
+        <li is="todo-item"></li>
+        <li is="todo-item"></li>
+    </ul>
+</div>
+
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+    var data = {counter: 0};
+
+    Vue.component('todo-item', {
+        template: "<li>{{ title }}</li>",
+        data: function () {
+            return {title: "Do smth"};
+        }
+    });
+
+    var app = new Vue({
+        el: "#app"
+    })
+</script>
+</body>
+</html>

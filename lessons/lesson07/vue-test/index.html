@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+<div id="vue-app">
+    {{ message }}
+    <br>
+    <input type="text" v-model="message">
+    <div v-if="show">I am here</div>
+
+    <ul>
+        <li v-for="point in points">
+            {{ point.title }}
+        </li>
+    </ul>
+
+    <div>
+        <p> {{counter}} </p>
+        <button v-on:click="increment">Increment</button>
+        <button v-on:click="decrement">Increment</button>
+        <button v-on:click="reset">Reset</button>
+    </div>
+    <img v-bind:src="url">
+</div>
+
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+
+	var application = new Vue({
+
+		el: "#vue-app",
+		data: {
+			message: "Hello, world!",
+			show: true,
+			points: [
+				{title: "Conquire the Earth"},
+				{title: "Kill people"},
+				{title: "Save animals"},
+				{title: "Save forests"},
+				{title: "Be happy"}
+			],
+			counter: 0,
+			url: "http://placeimg.com/400/200"
+		},
+		methods: {
+			increment: function () {
+				this.counter = this.counter + 1;
+			},
+			decrement: function () {
+				this.counter = this.counter - 1;
+			},
+			reset: function () {
+				this.counter = 0;
+			}
+		}
+
+	});
+
+</script>
+</body>
+</html>

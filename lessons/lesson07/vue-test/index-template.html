@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div id="vue-app">
+      <span>Message: {{ message }}</span>
+      <br>
+      <span v-once>Message freeze: {{ message }}</span>
+      <br>
+      <span>Some html: <span v-html="htmlMessage"></span></span>
+      <br>
+      <span>Reveresed message: {{ message.split('').reverse().join('') }}</span>
+      <br>
+      <img v-bind:src="url">
+      <img :src="url">
+      <br>
+      <button v-on:click="changeUrl">Change URL</button>
+      <button @click="changeUrl">Change URL</button>
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      var application = new Vue({
+        el: "#vue-app",
+        data: {
+          message: "Hello, world!",
+          htmlMessage: "<span style='color:red;'>Red text</span>",
+          url: "http://placeimg.com/400/200"
+        },
+        methods: {
+          changeUrl: function() {
+            this.url = "http://placeimg.com/400/200/animals";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+</html>

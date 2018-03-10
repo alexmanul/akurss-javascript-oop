@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+
+    <style>
+        /*
+            *-enter - added before element is added to DOM
+                      removed one frame after added to DOM
+
+            *-enter-active - added before element is added to DOM,
+                             removed when transition finished
+                             used to define delay/duration
+
+            *-enter-to - added one frame after element added to DOM (when *-enter removed)
+
+            *-leave - added when backwards transition triggered
+
+            *-leave-active - added during leave transition
+                             used for duration/delay...
+
+            *-leave-to - added one frame after leaving transition triggered (when *-leave removed)
+        */
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 1s;
+
+        }
+
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="vue-app">
+
+    <button @click="show = !show">Show/Hide</button>
+    <transition name="fade">
+        <p v-if="show">I am here</p>
+    </transition>
+</div>
+
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script>
+
+    new Vue({
+        el: "#vue-app",
+        data: {
+            show: true
+        }
+    })
+
+</script>
+</body>
+</html>

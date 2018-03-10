@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+   </head>
+  <body>
+
+    <div id="vue-app">
+      <span :class="{'text-danger' : isError}">Test text</span>
+      <button @click="changeText" class="btn btn-primary">Change text</button>
+    </div>
+
+    <div id="vue-app2">
+      <span :style="{ color : elColor}">Test text</span>
+      <button @click="changeText" class="btn btn-primary">Change text</button>
+    </div>
+
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/lodash/lodash.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+
+      var application = new Vue({
+
+          el: "#vue-app",
+          data: {
+            isError: false
+          },
+          methods: {
+            changeText: function() {
+              this.isError = !this.isError;
+            }
+          }
+
+      });
+
+      var application2 = new Vue({
+        el: "#vue-app2",
+        data: {
+          elColor: "red"
+        },
+        methods: {
+          changeText: function() {
+            this.elColor = this.elColor === "red" ? "blue" : "red";
+          }
+        }
+      });
+
+    </script>
+
+    </script>
+  </body>
+</html>
