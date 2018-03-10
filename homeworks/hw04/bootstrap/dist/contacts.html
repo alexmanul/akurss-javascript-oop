@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Приют для кошек "Няшка"</title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.min.css">
+</head>
+
+<body>
+
+<!-- Optional JavaScript - jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<!--NAVIGATION-->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="index.html">Приют для кошек "Няшка"</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item text-center">
+                <a class="nav-link" href="about.html">О нас</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link" href="cats.html">Коты и кошки</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link" href="kittens.html">Котята</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link" href="contacts.html">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h4 class="text-center my-4">Форма обратной связи</h4>
+    <p class="text-center">
+        Свяжитесь с нами, если хотите взять котейку домой или вам есть что рассказать про своих кошек!
+    </p>
+
+    <div class="row-fluid">
+        <div class="span12 my-5">
+            <form action="mail.php" method="POST" id="form">
+                <div class="form-group">
+                    <label for="exampleInputName">Имя:</label>
+                    <input type="text" name="name" class="form-control" id="exampleInputName" required placeholder="Имя">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">E-mail:</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp" required placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Текст сообщения:</label>
+                    <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="8"
+                              required
+                              placeholder="Текст вашего сообщения"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+            <script src="common.js"></script>
+        </div>
+    </div>
+</div>
+
+<!--FOOTER-->
+
+<div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+            <p class="copyright text-center my-3">
+                © Приют для кошек Няшка 2018.
+                Все права на любые материалы защищены в соответствии с международным законодательством.
+            </p>
+            <p class="copyright text-center">P.S. На самом деле, это просто учебный сайт. Если хотите помочь
+                животным на самом деле, тогда вам сюда - <a href="http://murkosha.ru">Приют "Муркоша"</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<br>
+</body>
+</html>
